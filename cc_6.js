@@ -37,3 +37,14 @@ const employees = [
         ]
     }
 ];
+
+//Create a Function to Display Employee Shift Details
+function displayEmployeeShifts(employee){
+    console.log(`Employee: ${employee.name}`);
+    console.log("Shifts:");
+
+    employee.shifts.forEach(shift => {
+        console.log(`  ${shift.day}:${shift.hours}hours`);
+    });
+}
+
