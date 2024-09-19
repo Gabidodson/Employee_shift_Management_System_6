@@ -63,5 +63,21 @@ function assignShift(employeeName, day, hours, employeesArray){
         employee.shifts.push({day, hours});
         console.log (`Successfully scheduled ${employeeName} a ${hours}-hour shift on ${day}`);
 
+}
+
+//Create a Function to Calculate Total Hours Worked
+function calculateTotalHours(employeeName, employeesArray){
+    const employee = employeesArray.find(emp => emp.name === employeeName);
+    if (!employee){
+        console.log(`Error: Employee "${employeeName}" not found`);
+        return null;
     }
+
+const totalHours = employee.shifts.reduce((sum, shift) => sum + shift.hours, 0);
+console.log(`${employeeName}'s totalHours: ${totalHours}`);
+    return totalHours;
+
+}
+
+
 
