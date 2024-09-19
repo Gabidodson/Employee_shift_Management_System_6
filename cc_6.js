@@ -37,6 +37,7 @@ const employees = [
         ]
     }
 ];
+//arranged this way for better readability
 
 //Create a Function to Display Employee Shift Details
 function displayEmployeeShifts(employee){
@@ -79,5 +80,20 @@ console.log(`${employeeName}'s totalHours: ${totalHours}`);
 
 }
 
+//Create a Function to List Employees with Free Days
+function listAvailableEmployees (day, employeesArray) {
+    console.log (`Employees available on ${day}:`);
+    const availableEmployees = employeesArray.filter(employee =>
+        !employee.shifts.some(shift => shift.day === day)
+    );
+    if (availableEmployees.length === 0) {
+        console.log("No employees are available on this day");
+    } else {
+        availableEmployees.forEach(employee => {
+            console.log (`- ${employee.name}`);
+        });
+    }
+    return availableEmployees;
+    }
 
 
