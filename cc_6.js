@@ -97,3 +97,18 @@ function listAvailableEmployees (day, employeesArray) {
     }
 
 
+//Examples
+
+//Display employee shifts
+console.log("Displaying Peter Griffin's shifts");
+displayEmployeeShifts(employees[0]);
+//Assign a new shift
+console.log("\nAssigning a new shift to Lois Griffin");
+assignShift("Lois Griffin", "Monday",6, employees);
+//Calculate hours worked
+console.log("\nCaluculating total hours for Glen Quagmire:");
+calculateTotalHours("Glen Quagmire", employees);
+// List employees with free days
+console.log("\nListing employees available on Wednesday:");
+listAvailableEmployees("Wednesday", employees);
+
